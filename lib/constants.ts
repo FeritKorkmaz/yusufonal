@@ -1,0 +1,20 @@
+export const COMPANY = {
+  name: 'Yusuf Ünal Gayrimenkul',
+  shortName: 'Yusuf Ünal',
+  slogan: "Konya'da Güvenilir Emlak Danışmanlığı",
+  phone1: '03322474000',
+  phone1Display: '0332 247 40 00',
+  phone2: '05377227586',
+  phone2Display: '0537 722 75 86',
+  whatsapp: '905377227586',
+  whatsappDisplay: '0537 722 75 86',
+  sahibindenUrl: 'https://yusufunalgayrimenkul.sahibinden.com/',
+  address: 'Akşemsettin Mah. Yazın Sokak 3/A, Selçuklu, Konya',
+  email: '',
+  instagramUrl: 'https://www.instagram.com/yusufunalgayrimenkul',
+  facebookUrl: 'https://www.facebook.com/profile.php?id=100091624907821',
+  googleMapsUrl: 'https://share.google/osqxSwXR93U0fY9xF',
+  logoUrl: '/logo.png',
+  mapEmbedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3148.6134363274746!2d32.44812007535569!3d37.892722005357996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d0850070eef073%3A0x4739801a4d4b94f9!2sYusuf%20%C3%9Cnal%20Gayrimenkul!5e0!3m2!1str!2str!4v1781640363423!5m2!1str!2str',
+} as const
