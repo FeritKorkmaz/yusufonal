@@ -19,7 +19,7 @@ export default function FloatingButtons() {
       <a
         href={`tel:${COMPANY.phone1}`}
         aria-label="Telefon ile ara"
-        className="flex items-center justify-center w-14 h-14 rounded-full bg-[#F5B800] hover:bg-[#e0a800] text-[#1e1e1e] shadow-2xl transition-colors duration-200"
+        className="micro-cta flex items-center justify-center w-14 h-14 rounded-full bg-[#ffd329] hover:bg-[#e6bd20] text-[#1e1e1e] shadow-2xl"
       >
         <Phone size={24} />
       </a>

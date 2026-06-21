@@ -58,9 +58,9 @@ export default function Header() {
             <Image
               src={COMPANY.logoUrl}
               alt={COMPANY.name}
-              width={180}
-              height={60}
-              className="h-10 lg:h-12 w-auto object-contain"
+              width={240}
+              height={80}
+              className="h-12 lg:h-16 w-auto object-contain"
               priority
             />
           </a>
@@ -71,7 +71,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-white/80 hover:text-[#F5B800] text-sm font-medium transition-colors duration-200"
+                className="text-white/80 hover:text-[#ffd329] text-sm font-medium transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -85,7 +85,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-white/50 hover:text-[#F5B800] transition-colors duration-200"
+              className="text-white/50 hover:text-[#ffd329] transition-colors duration-200"
             >
               <InstagramIcon size={18} />
             </a>
@@ -94,7 +94,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="text-white/50 hover:text-[#F5B800] transition-colors duration-200"
+              className="text-white/50 hover:text-[#ffd329] transition-colors duration-200"
             >
               <FacebookIcon size={18} />
             </a>
@@ -102,14 +102,14 @@ export default function Header() {
               href={COMPANY.sahibindenUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm font-semibold text-[#1e1e1e] bg-[#F5B800] hover:bg-[#e0a800] px-4 py-2 rounded transition-colors duration-200"
+              className="micro-cta flex items-center gap-1.5 text-sm font-semibold text-[#1e1e1e] bg-[#ffd329] hover:bg-[#e6bd20] px-4 py-2 rounded"
             >
               <ExternalLink size={14} />
               İlanlarımızı İncele
             </a>
             <a
               href={`tel:${COMPANY.phone1}`}
-              className="flex items-center gap-1.5 text-sm font-semibold text-white border border-white/30 hover:border-[#F5B800] hover:text-[#F5B800] px-4 py-2 rounded transition-colors duration-200"
+              className="flex items-center gap-1.5 text-sm font-semibold text-white border border-white/30 hover:border-[#ffd329] hover:text-[#ffd329] px-4 py-2 rounded transition-colors duration-200"
             >
               <Phone size={14} />
               Bizi Arayın
@@ -137,7 +137,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={handleNavClick}
-                className="text-white/80 hover:text-[#F5B800] py-3 text-base font-medium border-b border-white/10 transition-colors"
+                className="text-white/80 hover:text-[#ffd329] py-3 text-base font-medium border-b border-white/10 transition-colors"
               >
                 {link.label}
               </a>
@@ -148,7 +148,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleNavClick}
-                className="flex items-center justify-center gap-2 text-sm font-semibold text-[#1e1e1e] bg-[#F5B800] px-4 py-3 rounded"
+                className="micro-cta flex items-center justify-center gap-2 text-sm font-semibold text-[#1e1e1e] bg-[#ffd329] hover:bg-[#e6bd20] px-4 py-3 rounded"
               >
                 <ExternalLink size={14} />
                 İlanlarımızı İncele
@@ -168,7 +168,7 @@ export default function Header() {
                   rel="noopener noreferrer"
                   onClick={handleNavClick}
                   aria-label="Instagram"
-                  className="text-white/50 hover:text-[#F5B800] transition-colors"
+                  className="text-white/50 hover:text-[#ffd329] transition-colors"
                 >
                   <InstagramIcon size={22} />
                 </a>
@@ -178,7 +178,7 @@ export default function Header() {
                   rel="noopener noreferrer"
                   onClick={handleNavClick}
                   aria-label="Facebook"
-                  className="text-white/50 hover:text-[#F5B800] transition-colors"
+                  className="text-white/50 hover:text-[#ffd329] transition-colors"
                 >
                   <FacebookIcon size={22} />
                 </a>

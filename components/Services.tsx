@@ -50,13 +50,13 @@ export default function Services() {
   return (
     <section
       id="hizmetler"
-      className="py-20 lg:py-28 bg-[#1e1e1e]"
+      className="py-20 lg:py-28 bg-[#1e1e1e] mobile-scroll-rise"
       aria-label="Hizmetlerimiz"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-14">
-          <p className="text-[#F5B800] text-xs font-bold uppercase tracking-widest mb-3">
+          <p className="text-[#ffd329] text-xs font-bold uppercase tracking-widest mb-3">
             Ne Yapıyoruz?
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-balance">
@@ -70,13 +70,13 @@ export default function Services() {
 
         {/* Services grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map(({ icon: Icon, title, description }) => (
+          {services.map(({ icon: Icon, title, description }, index) => (
             <div
               key={title}
-              className="group bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#F5B800]/50 hover:bg-white/8 transition-all duration-300"
+              className={`mobile-scroll-rise mobile-scroll-stagger-${index + 1} micro-card group bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#ffd329]/50 hover:bg-white/8`}
             >
-              <div className="w-11 h-11 rounded-xl bg-[#F5B800]/10 flex items-center justify-center mb-4 group-hover:bg-[#F5B800]/20 transition-colors duration-300">
-                <Icon size={20} className="text-[#F5B800]" />
+              <div className="w-11 h-11 rounded-xl bg-[#ffd329]/10 flex items-center justify-center mb-4 group-hover:bg-[#ffd329]/20 transition-colors duration-300">
+                <Icon size={20} className="text-[#ffd329]" />
               </div>
               <h3 className="font-bold text-white text-base mb-2 leading-snug">
                 {title}

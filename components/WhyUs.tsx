@@ -30,13 +30,13 @@ const reasons = [
 export default function WhyUs() {
   return (
     <section
-      className="py-20 lg:py-28 bg-background"
+      className="py-20 lg:py-28 bg-background mobile-scroll-rise"
       aria-label="Neden Biz?"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-14">
-          <p className="text-[#F5B800] text-xs font-bold uppercase tracking-widest mb-3">
+          <p className="text-[#ffd329] text-xs font-bold uppercase tracking-widest mb-3">
             Farkımız
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance">
@@ -53,14 +53,14 @@ export default function WhyUs() {
           {reasons.map(({ icon: Icon, title, description }, i) => (
             <div
               key={title}
-              className="relative flex flex-col items-start p-6 bg-card rounded-2xl border border-border hover:border-[#F5B800]/40 hover:shadow-md transition-all duration-300"
+              className={`mobile-scroll-rise mobile-scroll-stagger-${i + 1} micro-card relative flex flex-col items-start p-6 bg-card rounded-2xl border border-border hover:border-[#ffd329]/40 hover:shadow-md`}
             >
               {/* Number */}
               <span className="absolute top-5 right-5 text-4xl font-black text-foreground/5 select-none">
                 0{i + 1}
               </span>
               <div className="w-12 h-12 rounded-2xl bg-[#1e1e1e] flex items-center justify-center mb-5">
-                <Icon size={22} className="text-[#F5B800]" />
+                <Icon size={22} className="text-[#ffd329]" />
               </div>
               <h3 className="font-bold text-foreground text-base mb-2">
                 {title}

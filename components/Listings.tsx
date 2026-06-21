@@ -32,13 +32,13 @@ export default function Listings() {
   return (
     <section
       id="ilanlar"
-      className="py-20 lg:py-28 bg-background"
+      className="py-20 lg:py-28 bg-background mobile-scroll-rise"
       aria-label="İlanlar"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-14">
-          <p className="text-[#F5B800] text-xs font-bold uppercase tracking-widest mb-3">
+          <p className="text-[#ffd329] text-xs font-bold uppercase tracking-widest mb-3">
             Güncel Portföy
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance">
@@ -52,18 +52,18 @@ export default function Listings() {
 
         {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {listingCards.map(({ icon: Icon, title, description }) => (
+          {listingCards.map(({ icon: Icon, title, description }, index) => (
             <a
               key={title}
               href={COMPANY.sahibindenUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col bg-card border border-border rounded-2xl p-6 hover:border-[#F5B800] hover:shadow-lg transition-all duration-300"
+              className={`mobile-scroll-rise mobile-scroll-stagger-${index + 1} micro-card group flex flex-col bg-card border border-border rounded-2xl p-6 hover:border-[#ffd329] hover:shadow-lg`}
             >
-              <div className="w-12 h-12 rounded-xl bg-[#F5B800]/10 flex items-center justify-center mb-4 group-hover:bg-[#F5B800] transition-colors duration-300">
+              <div className="w-12 h-12 rounded-xl bg-[#ffd329]/10 flex items-center justify-center mb-4 group-hover:bg-[#ffd329] transition-colors duration-300">
                 <Icon
                   size={22}
-                  className="text-[#F5B800] group-hover:text-[#1e1e1e] transition-colors duration-300"
+                  className="text-[#ffd329] group-hover:text-[#1e1e1e] transition-colors duration-300"
                 />
               </div>
               <h3 className="font-bold text-foreground text-base mb-2">
@@ -72,7 +72,7 @@ export default function Listings() {
               <p className="text-muted-foreground text-sm leading-relaxed flex-1">
                 {description}
               </p>
-              <div className="mt-4 flex items-center gap-1.5 text-[#F5B800] text-sm font-semibold">
+              <div className="mt-4 flex items-center gap-1.5 text-[#ffd329] text-sm font-semibold">
                 <span>İlanları Gör</span>
                 <ArrowRight
                   size={14}

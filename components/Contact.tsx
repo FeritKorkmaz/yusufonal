@@ -24,7 +24,6 @@ function FacebookIcon({ size = 18 }: { size?: number }) {
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', message: '' })
-  const [sent, setSent] = useState(false)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -34,21 +33,38 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // UI only — no backend
-    setSent(true)
-    setForm({ name: '', phone: '', message: '' })
+
+    const name = form.name.trim()
+    const phone = form.phone.trim()
+    const message = form.message.trim()
+
+    if (!name || !phone || !message) {
+      alert('Lütfen ad soyad, telefon ve mesaj alanlarını doldurun.')
+      return
+    }
+
+    const whatsappMessage = `Merhaba, web siteniz üzerinden iletişime geçiyorum.
+
+Ad Soyad: ${name}
+Telefon: ${phone}
+Mesaj: ${message}`
+    const whatsappUrl = `https://wa.me/905377227586?text=${encodeURIComponent(
+      whatsappMessage
+    )}`
+
+    window.open(whatsappUrl, '_blank')
   }
 
   return (
     <section
       id="iletisim"
-      className="py-20 lg:py-28 bg-[#1e1e1e]"
+      className="py-20 lg:py-28 bg-[#1e1e1e] mobile-scroll-rise"
       aria-label="İletişim"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-14">
-          <p className="text-[#F5B800] text-xs font-bold uppercase tracking-widest mb-3">
+          <p className="text-[#ffd329] text-xs font-bold uppercase tracking-widest mb-3">
             Bize Ulaşın
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-balance">
@@ -67,10 +83,10 @@ export default function Contact() {
             <div className="grid sm:grid-cols-2 gap-4">
               <a
                 href={`tel:${COMPANY.phone1}`}
-                className="group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#F5B800]/40 rounded-xl p-4 transition-all duration-200"
+                className="mobile-scroll-rise mobile-scroll-stagger-1 micro-card group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#ffd329]/40 rounded-xl p-4"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#F5B800]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F5B800]/20 transition-colors">
-                  <Phone size={18} className="text-[#F5B800]" />
+                <div className="w-10 h-10 rounded-lg bg-[#ffd329]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ffd329]/20 transition-colors">
+                  <Phone size={18} className="text-[#ffd329]" />
                 </div>
                 <div>
                   <p className="text-white/40 text-xs mb-0.5">Telefon 1</p>
@@ -82,10 +98,10 @@ export default function Contact() {
 
               <a
                 href={`tel:${COMPANY.phone2}`}
-                className="group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#F5B800]/40 rounded-xl p-4 transition-all duration-200"
+                className="mobile-scroll-rise mobile-scroll-stagger-2 micro-card group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#ffd329]/40 rounded-xl p-4"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#F5B800]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F5B800]/20 transition-colors">
-                  <Phone size={18} className="text-[#F5B800]" />
+                <div className="w-10 h-10 rounded-lg bg-[#ffd329]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ffd329]/20 transition-colors">
+                  <Phone size={18} className="text-[#ffd329]" />
                 </div>
                 <div>
                   <p className="text-white/40 text-xs mb-0.5">Telefon 2</p>
@@ -99,10 +115,10 @@ export default function Contact() {
                 href={`https://wa.me/${COMPANY.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#F5B800]/40 rounded-xl p-4 transition-all duration-200"
+                className="mobile-scroll-rise mobile-scroll-stagger-3 micro-card group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#ffd329]/40 rounded-xl p-4"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#F5B800]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F5B800]/20 transition-colors">
-                  <MessageCircle size={18} className="text-[#F5B800]" />
+                <div className="w-10 h-10 rounded-lg bg-[#ffd329]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ffd329]/20 transition-colors">
+                  <MessageCircle size={18} className="text-[#ffd329]" />
                 </div>
                 <div>
                   <p className="text-white/40 text-xs mb-0.5">WhatsApp</p>
@@ -112,9 +128,9 @@ export default function Contact() {
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl p-4">
-                <div className="w-10 h-10 rounded-lg bg-[#F5B800]/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin size={18} className="text-[#F5B800]" />
+              <div className="mobile-scroll-rise mobile-scroll-stagger-4 flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl p-4">
+                <div className="w-10 h-10 rounded-lg bg-[#ffd329]/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin size={18} className="text-[#ffd329]" />
                 </div>
                 <div>
                   <p className="text-white/40 text-xs mb-0.5">Adres</p>
@@ -131,9 +147,9 @@ export default function Contact() {
                 href={COMPANY.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#F5B800]/40 rounded-xl p-4 transition-all duration-200"
+                className="mobile-scroll-rise mobile-scroll-stagger-1 micro-card group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#ffd329]/40 rounded-xl p-4"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#F5B800]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F5B800]/20 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-[#ffd329]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ffd329]/20 transition-colors">
                   <InstagramIcon size={18} />
                 </div>
                 <div>
@@ -145,9 +161,9 @@ export default function Contact() {
                 href={COMPANY.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#F5B800]/40 rounded-xl p-4 transition-all duration-200"
+                className="mobile-scroll-rise mobile-scroll-stagger-2 micro-card group flex items-center gap-4 bg-white/5 border border-white/10 hover:border-[#ffd329]/40 rounded-xl p-4"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#F5B800]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#F5B800]/20 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-[#ffd329]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ffd329]/20 transition-colors">
                   <FacebookIcon size={18} />
                 </div>
                 <div>
@@ -162,10 +178,10 @@ export default function Contact() {
               href={COMPANY.sahibindenUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between gap-3 bg-[#F5B800]/10 border border-[#F5B800]/30 hover:border-[#F5B800]/60 rounded-xl p-4 group transition-all duration-200"
+              className="mobile-scroll-rise mobile-scroll-stagger-3 micro-card flex items-center justify-between gap-3 bg-[#ffd329]/10 border border-[#ffd329]/30 hover:border-[#ffd329]/60 rounded-xl p-4 group"
             >
               <div>
-                <p className="text-[#F5B800] text-xs font-bold uppercase tracking-wider mb-0.5">
+                <p className="text-[#ffd329] text-xs font-bold uppercase tracking-wider mb-0.5">
                   Güncel İlanlarımız
                 </p>
                 <p className="text-white/60 text-sm">
@@ -174,12 +190,12 @@ export default function Contact() {
               </div>
               <ExternalLink
                 size={20}
-                className="text-[#F5B800] group-hover:scale-110 transition-transform"
+                className="text-[#ffd329] group-hover:scale-110 transition-transform"
               />
             </a>
 
             {/* Map placeholder */}
-            <div className="rounded-xl overflow-hidden border border-white/10 h-52">
+            <div className="mobile-scroll-rise mobile-scroll-stagger-4 rounded-xl overflow-hidden border border-white/10 h-52">
               <iframe
                 title="Yusuf Ünal Gayrimenkul Konum"
                 src={COMPANY.mapEmbedUrl}
@@ -194,7 +210,7 @@ export default function Contact() {
           </div>
 
           {/* Right: Contact form */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div className="mobile-scroll-rise mobile-scroll-stagger-2 bg-white/5 border border-white/10 rounded-2xl p-8">
             <h3 className="text-white font-bold text-xl mb-1">
               Mesaj Gönderin
             </h3>
@@ -202,97 +218,68 @@ export default function Contact() {
               Size en kısa sürede dönüş yapacağız.
             </p>
 
-            {sent ? (
-              <div className="flex flex-col items-center justify-center text-center py-12">
-                <div className="w-14 h-14 rounded-full bg-[#F5B800]/20 flex items-center justify-center mb-4">
-                  <svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#F5B800"
-                    strokeWidth="2.5"
-                  >
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
-                </div>
-                <p className="text-white font-bold text-lg mb-1">
-                  Mesajınız Alındı!
-                </p>
-                <p className="text-white/50 text-sm">
-                  En kısa sürede sizinle iletişime geçeceğiz.
-                </p>
-                <button
-                  onClick={() => setSent(false)}
-                  className="mt-6 text-[#F5B800] text-sm hover:underline"
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider"
                 >
-                  Yeni mesaj gönder
-                </button>
+                  Ad Soyad
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Adınız ve soyadınız"
+                  className="w-full bg-white/5 border border-white/15 focus:border-[#ffd329]/60 text-white placeholder-white/30 rounded-lg px-4 py-3 text-sm outline-none transition-colors"
+                />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider"
-                  >
-                    Ad Soyad
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="Adınız ve soyadınız"
-                    className="w-full bg-white/5 border border-white/15 focus:border-[#F5B800]/60 text-white placeholder-white/30 rounded-lg px-4 py-3 text-sm outline-none transition-colors"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider"
-                  >
-                    Telefon
-                  </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    required
-                    value={form.phone}
-                    onChange={handleChange}
-                    placeholder="05XX XXX XX XX"
-                    className="w-full bg-white/5 border border-white/15 focus:border-[#F5B800]/60 text-white placeholder-white/30 rounded-lg px-4 py-3 text-sm outline-none transition-colors"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider"
-                  >
-                    Mesaj
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="Mesajınızı buraya yazın..."
-                    className="w-full bg-white/5 border border-white/15 focus:border-[#F5B800]/60 text-white placeholder-white/30 rounded-lg px-4 py-3 text-sm outline-none transition-colors resize-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-[#F5B800] hover:bg-[#e0a800] text-[#1e1e1e] font-bold py-3.5 rounded-lg transition-colors duration-200 text-sm mt-2"
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider"
                 >
-                  Gönder
-                </button>
-              </form>
-            )}
+                  Telefon
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  value={form.phone}
+                  onChange={handleChange}
+                  placeholder="05XX XXX XX XX"
+                  className="w-full bg-white/5 border border-white/15 focus:border-[#ffd329]/60 text-white placeholder-white/30 rounded-lg px-4 py-3 text-sm outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider"
+                >
+                  Mesaj
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={4}
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Mesajınızı buraya yazın..."
+                  className="w-full bg-white/5 border border-white/15 focus:border-[#ffd329]/60 text-white placeholder-white/30 rounded-lg px-4 py-3 text-sm outline-none transition-colors resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="micro-cta w-full bg-[#ffd329] hover:bg-[#e6bd20] text-[#1e1e1e] font-bold py-3.5 rounded-lg text-sm mt-2"
+              >
+                Gönder
+              </button>
+            </form>
           </div>
         </div>
       </div>

@@ -55,7 +55,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-[#F5B800]/50 hover:text-[#F5B800] text-white/40 transition-all duration-200"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-[#ffd329]/50 hover:text-[#ffd329] text-white/40 transition-all duration-200"
               >
                 <InstagramIcon size={16} />
               </a>
@@ -64,7 +64,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-[#F5B800]/50 hover:text-[#F5B800] text-white/40 transition-all duration-200"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-[#ffd329]/50 hover:text-[#ffd329] text-white/40 transition-all duration-200"
               >
                 <FacebookIcon size={16} />
               </a>
@@ -73,7 +73,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="İlanlarımız"
-                className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-[#F5B800]/50 hover:text-[#F5B800] text-white/40 transition-all duration-200"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 border border-white/10 hover:border-[#ffd329]/50 hover:text-[#ffd329] text-white/40 transition-all duration-200"
               >
                 <ExternalLink size={16} />
               </a>
@@ -90,7 +90,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-white/40 hover:text-[#F5B800] text-sm transition-colors"
+                    className="text-white/40 hover:text-[#ffd329] text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -101,7 +101,7 @@ export default function Footer() {
                   href={COMPANY.sahibindenUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-white/40 hover:text-[#F5B800] text-sm transition-colors"
+                  className="flex items-center gap-1.5 text-white/40 hover:text-[#ffd329] text-sm transition-colors"
                 >
                   <ExternalLink size={12} />
                   İlanlarımız
@@ -119,7 +119,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${COMPANY.phone1}`}
-                  className="flex items-center gap-2 text-white/40 hover:text-[#F5B800] text-sm transition-colors"
+                  className="flex items-center gap-2 text-white/40 hover:text-[#ffd329] text-sm transition-colors"
                 >
                   <Phone size={13} />
                   {COMPANY.phone1Display}
@@ -128,7 +128,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${COMPANY.phone2}`}
-                  className="flex items-center gap-2 text-white/40 hover:text-[#F5B800] text-sm transition-colors"
+                  className="flex items-center gap-2 text-white/40 hover:text-[#ffd329] text-sm transition-colors"
                 >
                   <Phone size={13} />
                   {COMPANY.phone2Display}
@@ -152,7 +152,7 @@ export default function Footer() {
               href={COMPANY.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-white/25 hover:text-[#F5B800] text-xs transition-colors"
+              className="flex items-center gap-1.5 text-white/25 hover:text-[#ffd329] text-xs transition-colors"
             >
               <InstagramIcon size={11} />
               Instagram
@@ -161,7 +161,7 @@ export default function Footer() {
               href={COMPANY.facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-white/25 hover:text-[#F5B800] text-xs transition-colors"
+              className="flex items-center gap-1.5 text-white/25 hover:text-[#ffd329] text-xs transition-colors"
             >
               <FacebookIcon size={11} />
               Facebook
@@ -170,7 +170,7 @@ export default function Footer() {
               href={COMPANY.sahibindenUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-white/25 hover:text-[#F5B800] text-xs transition-colors"
+              className="flex items-center gap-1.5 text-white/25 hover:text-[#ffd329] text-xs transition-colors"
             >
               <ExternalLink size={11} />
               İlanlarımız
