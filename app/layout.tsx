@@ -9,9 +9,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Yusuf Ünal Gayrimenkul | Konya Emlak Danışmanlığı',
+  title: 'Yusuf Ünal Gayrimenkul',
   description:
-    "Konya'da güvenilir emlak danışmanlığı. Satılık, kiralık konut, arsa ve ticari gayrimenkul ihtiyaçlarınızda Yusuf Ünal Gayrimenkul profesyonel destek sunar.",
+    'Konya’da güvenilir emlak danışmanlığı, satılık ve kiralık gayrimenkul hizmetleri.',
   keywords: [
     'konya emlak',
     'konya gayrimenkul',
@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     'arsa konya',
     'yusuf ünal gayrimenkul',
   ],
-  generator: 'v0.app',
 }
 
 export const viewport: Viewport = {
