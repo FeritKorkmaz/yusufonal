@@ -4,7 +4,7 @@ import path from 'node:path'
 const rootDir = process.cwd()
 const outDir = path.join(rootDir, 'out')
 const docsDir = path.join(rootDir, 'docs')
-const cname = 'demo.haliwork.com'
+const cname = 'www.yusufunalgyo.com'
 
 try {
   await access(outDir)
